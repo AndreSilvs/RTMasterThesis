@@ -1,0 +1,56 @@
+<rtconfig version="1.0" dataset="USGS Colorado 16k">
+
+  <quicklistofdatasets>
+    Perlin Noise 8k
+    Perlin Noise 32k
+    Puget Sound 16k
+    USGS Colorado 16k
+  </quicklistofdatasets>
+
+  <info>
+    SCALABLE VIEWER CONFIGURATION FILE
+    "file" - the directory and base name of the heightmap/phototexture to be loaded. The tile indices and file extension will be appended to this base name.
+    "extension" - file extension of the heightmap/phototexture
+    "bpp" [8,16] - Default value is 8.
+    "isCompact" - true if in per-patch format, false if in per-point format.
+
+    STATS
+    "activeregionsize" - The size of the active tile region. Not fully implemented - the only usable value currently is 3 tiles (3x3).
+    "visibilityfar" - Maximum rendering distance.
+    "loadingfar" - Maximum loading distance - should be greater than "visibilityfar" to allow for new tiles to be loaded without the user noticing
+    "mapheight" - Heightmap elevation will be interpreted as ranging from 0.0-1.0. This range will be scaled to the interval 0.0-mapheight.
+    This parameter can also be changed during execution.
+
+    SYNTAX
+    heightmap file="" isCompact=""
+    phototexture file=""
+    stats mapheight="" activeregionsize="" visibilityfar="" loadingfar=""
+
+    -> The entire file will be read but only the first node of heightmap/phototexture will be parsed.
+
+    nophototexture is not used - it serves as additional info for the reader.
+  </info>
+
+  <screenresolutions>
+    <resolution width="1024" height="768"/>
+    <resolution width="1280" height="1024"/>
+    <resolution width="1920" height="1080"/>
+  </screenresolutions>
+
+  <dataset name="Puget Sound 16k" d="16k x 16k, 8-bit, 4k tiles, Puget Sound large terrain subdivided in large tiles">
+    <heightmapscalable file="Datasets\PugetSound\height\ps_cheight" extension=".png" tiles="4,4" dimensions="4096,4096" isCompact="true" bpc="8"/>
+    <phototexturescalable file="Datasets\PugetSound\photo\ps_photo" extension=".dds" tiles="4,4" dimensions="4096,4096"/>
+    <stats2 patchsize="2.0" mapheight="1344" activeregionsize="3" visibilityfar="3072" loadingfar="4096"/>
+    <stats patchsize="1.0" mapheight="672" activeregionsize="3" visibilityfar="1536" loadingfar="2048"/>
+    <camscript file="CamPaths/PugetSoundSCPath.cps"/>
+  </dataset>
+
+  <dataset name="USGS Colorado 16k" d="16k x 16k, 16-bit, 2k tiles, Subset of Colorado tileset obtained from USGS site.">
+    <heightmapscalable file="Datasets\USGSColorado\height\col16_height" extension=".png" tiles="8,8" dimensions="2048,2048" isCompact="true" bpc="16"/>
+    <phototexturescalable file="Datasets\USGSColorado\photo\col16_photo" extension=".dds" tiles="8,8" dimensions="2048,2048"/>
+    <stats2 patchsize="2.0" mapheight="1024" activeregionsize="3" visibilityfar="1536" loadingfar="2048"/>
+    <stats patchsize="1.0" mapheight="512" activeregionsize="3" visibilityfar="1536" loadingfar="2048"/>
+    <camscript file="CamPaths/ColoradoSCPath.cps"/>
+  </dataset>
+
+</rtconfig>

@@ -1,0 +1,69 @@
+<rtconfig version="1.0" dataset="National n39 w106 - Colorado">
+
+  <quicklistofdatasets>
+    Perlin-Generation 1K
+    Puget Sound 4k
+    Grand Canyon 4k x 2k
+    National n39 w106 - Colorado
+  </quicklistofdatasets>
+  
+  <info>
+    This configuration file is the only way for the RTHeightfield project to load datasets.
+    
+    A configuration file loads as follows:
+    
+    - Read the "name" attribute in the root node.
+    - Search the first dataset node with a matching "name" attribute.
+    - Load the corresponding heightmap.
+    - Load the corresponding phototexture if present.
+    - Assign custom stats if present.
+    - Assign custom camera script file if present.
+    - Assign custom camera initial setup if present.
+    
+    - Read all of the screen resolutions given. The user can cycle between these resolutions in run-time by pressing F7, or toggle Fullscreen by pressing F4.
+    
+    The nodes and attributes named "quicklistofdatasets", "info", "d" and "nophototexture" are not processed by the parser.
+    Their only purpose is to provide additional information to the reader.
+    
+    If you want to view a different dataset, simply change the name of the dataset attribute on the root node (rtconfig) to the dataset you want.
+    The "quicklistofdatasets" already presents the most important dataset names for quick copy-paste.
+  </info>
+
+  <screenresolutions>
+    <resolution width="1024" height="768"/>
+    <resolution width="1280" height="1024"/>
+    <resolution width="1920" height="1080"/>
+  </screenresolutions>
+
+  <dataset name="Perlin-Generation 1K" d="Simple test heightfield in per point format">
+    <heightmap file="Datasets/Perlin/testhmap1k-perlin.png" isCompact="false"/>
+    <phototexture file="Datasets/Perlin/phototex1k.png"/>
+    <stats patchsize="1.0" mapheight="384"/>
+    <camscript file="CamPaths/Perlin1kPath.cps" />
+  </dataset>
+
+  <dataset name="Puget Sound 4k" d="Puget Sound heightfield 4k tile">
+    <heightmap file="Datasets/PSound/ps_height_4k.png" isCompact="false"/>
+    <phototexture file="Datasets/PSound/ps_texture_4k.png"/>
+    <camscript file="CamPaths/PugetSoundPath.cps" />
+    <stats patchsize="1.0" mapheight="384"/>
+    <camera position="512,512,512" direction="-45,-24"/>
+  </dataset>
+
+  <dataset name="Grand Canyon 4k x 2k" d="Showcase how the application can read heightfields with width!=height">
+   <heightmap file="Datasets/GCanyon/gcanyon_height.bmp" isCompact="false"/>
+   <phototexture file="Datasets/GCanyon/gcanyon_color_4k2k.bmp"/>
+   <camscript file="CamPaths/GCanyonPath.cps" />
+   <stats mapheight="384" patchsize="1.0"/>
+   <stats2 mapheight="1024" patchsize="4.0"/>
+  </dataset>
+
+  <dataset name="National n39 w106 - Colorado" d="- 16-bit per patch heightmap without phototexture">
+    <heightmap file="Datasets/USGSColorado/n39w106_16b_compact.png" isCompact="true" bpp="16" />
+    <phototexture file="Datasets/USGSColorado/n39w106_photo.jpeg"/>
+    <camscript file="CamPaths/ColoradoPath.cps" />
+    <stats patchsize="1.0" mapheight="384"/>
+    <stats2 patchsize="2.0" mapheight="768"/>
+  </dataset>
+
+ </rtconfig>
