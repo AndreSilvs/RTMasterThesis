@@ -19,4 +19,4 @@ All of the code in this repository, with the exception of the Bilinear Patch Int
 To download and run the project you will require the VS 2015 redistributables. https://www.microsoft.com/en-us/download/details.aspx?id=48145.
 The DevIL and SDL2 dlls are included with the executables.
 
-If you plan on using parts of my code, know that my code was made to fit the use-cases I thought necessary at the time. Use at your own risk!
+If you plan on using parts of my code, know that my code was made to fit the use-cases I thought necessary at the time. Several modules are not fully implemented as a result. Use at your own risk!
