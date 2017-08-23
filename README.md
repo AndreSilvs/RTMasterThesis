@@ -1,7 +1,7 @@
 # RTMasterThesis
-My Master Thesis project - a Heightfield Ray Tracer implemented in OpenGL 4.5.
+A Real-Time Terrain Ray Tracer - The project I implemented for my Master Thesis.
 
-This is the project I implemented for my Master Thesis in Ray Tracing for Scalable Terrains.
+Implemented in C++ with OpenGL 4.5, and the SDL2 and DevIL libs. The ray tracing code is fully implemented in GLSL shaders.
 
 I've implemented 2 ray tracers:
 
