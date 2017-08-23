@@ -11,6 +11,7 @@ I've implemented 2 ray tracers:
 Both projects use mostly the same code, except that the scalable tracer must manage an active region of tiles which has an additional layer of indirection compared to the small tracer.
 
 Video: https://drive.google.com/open?id=0B0hJL_Jwk3OdTjNQclJLVDhVNm8
+
 Thesis: https://drive.google.com/open?id=0B0hJL_Jwk3OdalJQeTlvYURiSkk
 
 All of the code in this repository, with the exception of the Bilinear Patch Interpolation, was developed by myself, implying a mix of following tutorials, trial-and-error and stackoverflow answers. The code for Bilinear Patch Interpolation was adapted from: http://shaunramsey.com/research/bp/.
